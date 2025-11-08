@@ -3,7 +3,12 @@ import moment from "moment";
 import simpleGit from "simple-git";
 import random from "random";
 
-const path = "./data.json";
+import pathModule from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = pathModule.dirname(__filename);
+const path = pathModule.join(__dirname, "data.json");
 const git = simpleGit();
 
 const makeCommit = async (n) => {
